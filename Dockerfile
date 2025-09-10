@@ -2,7 +2,11 @@ FROM python:3
 
 WORKDIR /data
 
-RUN pip install django==3.2
+# Upgrade pip and setuptools to ensure distutils is provided
+RUN python -m ensurepip --upgrade \
+ && pip install --upgrade pip setuptools
+
+RUN pip install django==3.12.3
 
 COPY . .
 
