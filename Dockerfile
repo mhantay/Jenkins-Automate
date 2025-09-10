@@ -6,7 +6,7 @@ WORKDIR /data
 RUN python -m ensurepip --upgrade \
  && pip install --upgrade pip setuptools
 
-RUN pip install django==3.12.3
+RUN pip install django==3.2
 
 COPY . .
 
